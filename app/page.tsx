@@ -52,7 +52,7 @@ const Home = () => {
   };
 
   return (
-    <article className="relative max-w-[425px] min-h-svh mx-auto">
+    <article className="relative max-w-[425px] min-h-dvh mx-auto">
       <div className="bg-white absolute w-full h-screen sm:h-3/4 sm:left-1/2 sm:top-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 sm:rounded-xl overflow-clip shadow-2xl">
         <div className="bg-accent w-full h-24 relative">
           <div className="hidden sm:flex justify-end p-3">
