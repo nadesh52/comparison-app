@@ -45,7 +45,7 @@ const ResultCard = ({ items }: any) => {
       </div>
       <div className="text-center">
         <p className="sm:text-2xl font-medium">{result.count}</p>
-        <p className="text-xs text-accent">count</p>
+        <p className="text-xs text-accent">Count</p>
       </div>
       <div className="text-center">
         <p className="sm:text-2xl font-semibold">{result.average}</p>
