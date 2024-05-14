@@ -37,7 +37,7 @@ const ResultCard = ({ items }: any) => {
       </div>
       <div className="text-center">
         <p className="sm:text-2xl font-medium">{result.quantity}</p>
-        <p className="text-xs text-accent">quantity</p>
+        <p className="text-xs text-accent">Quantity</p>
       </div>
       <div className="text-center">
         <p className="sm:text-2xl font-medium">{result.price}</p>
