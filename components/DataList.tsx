@@ -1,20 +1,39 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const DataList = ({ items, removeId }: any) => {
+  const [max, setMax] = useState(0);
+  const [min, setMin] = useState(0);
+
   const handleRemove = (e: any) => {
     removeId(e);
   };
+
+  useEffect(() => {
+    if (items) {
+      const max = items.reduce(function (prev: any, current: any) {
+        return prev.average > current.average ? prev : current;
+      });
+
+      const min = items.reduce(function (prev: any, current: any) {
+        return prev.average < current.average ? prev : current;
+      });
+      setMax(max.average);
+      setMin(min.average);
+    }
+  }, [items, max, min]);
 
   return (
     <ul>
       {items.map((item: any, idx: number) => (
         <li key={idx} className="m-4">
-          <div className="bg-white rounded-md p-3 shadow-md border-l-2 border-l-primary hover:shadow-lg transition-all">
+          <div
+            className={`${
+              (item.average === max && "bg-success-primary bg-opacity-25") ||
+              (item.average === min && "bg-error bg-opacity-25") ||
+              "bg-white"
+            } rounded-md p-3 shadow-md border-l-2 border-l-primary hover:shadow-lg transition-all`}
+          >
             <div className="flex gap-4 items-center justify-between">
-              <div className="text-center ml-1 min-[375px]:ml-4">
-                <p className="text-lg font-medium">{item.name}</p>
-                <p className="text-xs text-secondary">#</p>
-              </div>
               <div className="text-center">
                 <p className="text-lg font-medium">{item.quantity}</p>
                 <p className="text-xs text-secondary">Quantity</p>

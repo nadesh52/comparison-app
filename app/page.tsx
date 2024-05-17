@@ -4,7 +4,7 @@ import InputForm from "@/components/InputForm";
 import NoDataBox from "@/components/NoDataBox";
 import ResetButton from "@/components/ResetButton";
 import ResultCard from "@/components/ResultCard";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 const Home = () => {
   const [items, setItems] = useState<any>([]);

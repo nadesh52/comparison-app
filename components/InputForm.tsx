@@ -1,9 +1,8 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const inputInit = {
   id: 0,
-  name: 1,
   quantity: 0,
   price: 0,
   count: 1,
@@ -21,7 +20,6 @@ const sumAvg = (qty: number, price: number, count: number) => {
 
 const InputForm = ({ formData }: any) => {
   const [inputs, setInputs] = useState(inputInit);
-  const [itemName, setItemName] = useState(1);
 
   const handleChange = (event: any) => {
     const name = event.target.name;
@@ -38,7 +36,6 @@ const InputForm = ({ formData }: any) => {
 
     const newItem = {
       id: inputs.id,
-      name: itemName,
       quantity: inputs.quantity,
       price: inputs.price,
       count: inputs.count,
@@ -47,7 +44,6 @@ const InputForm = ({ formData }: any) => {
 
     formData(newItem);
     setInputs(inputInit);
-    setItemName((prev) => prev + 1);
   };
 
   return (

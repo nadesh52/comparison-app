@@ -33,10 +33,6 @@ const ResultCard = ({ items }: any) => {
     <div className="bg-white rounded-md shadow-lg p-3">
       <div className="flex-grow flex gap-8 items-center justify-between min-[425px]:w-[350px] min-w-[250px]">
         <div className="text-center">
-          <p className="sm:text-2xl font-medium">{result.name}</p>
-          <p className="text-xs text-accent">#</p>
-        </div>
-        <div className="text-center">
           <p className="sm:text-2xl font-medium">{result.quantity}</p>
           <p className="text-xs text-accent">Quantity</p>
         </div>
