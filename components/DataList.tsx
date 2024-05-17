@@ -28,10 +28,12 @@ const DataList = ({ items, removeId }: any) => {
         <li key={idx} className="m-4">
           <div
             className={`${
-              (item.average === max && "bg-success-primary bg-opacity-25") ||
-              (item.average === min && "bg-error bg-opacity-25") ||
+              (item.average === max &&
+                "bg-success-primary bg-opacity-10 border-l-success-primary") ||
+              (item.average === min &&
+                "bg-error bg-opacity-10 border-l-error") ||
               "bg-white"
-            } rounded-md p-3 shadow-md border-l-2 border-l-primary hover:shadow-lg transition-all`}
+            } rounded-md p-3 shadow-md border-l-2  hover:shadow-lg transition-all`}
           >
             <div className="flex gap-4 items-center justify-between">
               <div className="text-center">

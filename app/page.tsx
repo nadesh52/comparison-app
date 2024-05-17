@@ -7,7 +7,10 @@ import ResultCard from "@/components/ResultCard";
 import React, { useCallback, useEffect, useState } from "react";
 
 const Home = () => {
-  const [items, setItems] = useState<any>([]);
+  // const [items, setItems] = useState<any>([]);
+  const [items, setItems] = useState<any>(
+    JSON.parse(localStorage.getItem("items")!) || []
+  );
 
   const wrapperSetItem = useCallback(
     (value: any) => {
@@ -23,6 +26,17 @@ const Home = () => {
   const handleRemove = (e: any) => {
     setItems((prev: any) => prev.filter((data: any) => data.id !== e.id));
   };
+
+  useEffect(() => {
+    const data = localStorage.getItem("items");
+    if (data !== null) {
+      setItems(JSON.parse(data));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("items", JSON.stringify(items));
+  }, [items]);
 
   return (
     <article className="relative max-w-[425px] h-svh mx-auto">

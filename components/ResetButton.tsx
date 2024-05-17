@@ -6,7 +6,7 @@ const ResetButton = ({ wrapper }: any) => {
   };
   return (
     <button
-      className="flex flex-col items-center justify-center"
+      className="flex flex-col items-center justify-center text-white"
       onClick={handleReset}
     >
       <div className="hover:rotate-180 duration-300">
