@@ -10,7 +10,7 @@ const Home = () => {
   // const [items, setItems] = useState<any>([]);
   const [items, setItems] = useState<any>(
     (typeof window !== "undefined" &&
-      JSON.parse(localStorage.getItem("items"))) ||
+      JSON.parse(localStorage.getItem("items")!)) ||
       []
   );
 
