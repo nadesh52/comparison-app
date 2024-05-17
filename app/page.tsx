@@ -9,7 +9,9 @@ import React, { useCallback, useEffect, useState } from "react";
 const Home = () => {
   // const [items, setItems] = useState<any>([]);
   const [items, setItems] = useState<any>(
-    JSON.parse(localStorage.getItem("items")!) || []
+    (typeof window !== "undefined" &&
+      JSON.parse(localStorage.getItem("items"))) ||
+      []
   );
 
   const wrapperSetItem = useCallback(
